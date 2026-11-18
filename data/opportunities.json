@@ -1,12 +1,12 @@
 {
-  "atualizado_em": "2026-11-18T01:00-03:00",
+  "atualizado_em": "2026-11-18T01:15-03:00",
   "fontes": {
     "IFRN": "ok (4)",
     "Comperve/UFRN": "ok (3)",
     "SENAI-RN": "ok (0)",
     "FIERN (SESI/SENAI/IEL)": "ok (1)",
-    "Governo do RN": "ok (0)",
-    "SETHAS/SINE-RN": "ok (0)",
+    "Governo do RN": "falhou: ConnectionError",
+    "SETHAS/SINE-RN": "falhou: ConnectionError",
     "Links oficiais": "ok (10)"
   },
   "oportunidades": [
