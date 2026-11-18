@@ -5,8 +5,8 @@
     "Comperve/UFRN": "ok (2)",
     "SENAI-RN": "ok (0)",
     "FIERN (SESI/SENAI/IEL)": "ok (1)",
-    "Governo do RN": "ok (0)",
-    "SETHAS/SINE-RN": "ok (0)",
+    "Governo do RN": "falhou: ConnectionError",
+    "SETHAS/SINE-RN": "falhou: ConnectionError",
     "Links oficiais": "ok (10)"
   },
   "oportunidades": [
@@ -56,7 +56,7 @@
       "deadline": null,
       "published": null,
       "summary": "A nota do Enem abre as portas do Sisu, Prouni e Fies. Na Página do Participante você pede isenção da taxa, se inscreve e vê o resultado.",
-      "apply_url": "https://enem.inep.gov.br/participante/",
+      "apply_url": null,
       "apply_label": "Página do participante",
       "highlights": [
         "Isenção para escola pública"
