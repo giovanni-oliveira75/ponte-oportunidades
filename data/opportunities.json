@@ -1,0 +1,158 @@
+{
+  "atualizado_em": "2026-11-18T01:00-03:00",
+  "fontes": {
+    "IFRN": "ok (4)",
+    "Comperve/UFRN": "ok (3)",
+    "SENAI-RN": "ok (0)",
+    "FIERN (SESI/SENAI/IEL)": "ok (1)",
+    "Governo do RN": "ok (0)",
+    "SETHAS/SINE-RN": "ok (0)",
+    "Links oficiais": "ok (10)"
+  },
+  "oportunidades": [
+    {
+      "title": "IEL-RN promove palestra gratuita sobre planejamento e desenvolvimento de carreira para estagiários",
+      "url": "https://www2.fiern.org.br/iel-rn-promove-palestra-gratuita-sobre-planejamento-e-desenvolvimento-de-carreira-para-estagiarios/",
+      "source": "FIERN (SESI/SENAI/IEL)",
+      "category": "Jovem Aprendiz e Estágio",
+      "deadline": null,
+      "published": "2026-11-03",
+      "summary": "O Instituto Euvaldo Lodi do Rio Grande do Norte (IEL-RN) realiza, no dia 26 de novembro de 2026, mais uma edição do Foco na Carreira com IEL, com a palestra gratuita e online “Check-in de Carreira: Onde Estou e Para Onde Vou?”. O encontro acontecerá em dois horários, às 9h e às 1",
+      "evergreen": false,
+      "link_ok": true,
+      "id": "cfcbfff6ea09"
+    },
+    {
+      "title": "Curso técnico: processo seletivo da Escola Agrícola de Jundiaí (UFRN)",
+      "url": "https://www.comperve.ufrn.br/conteudo/cursostecnicos/escolaagricola/eaj_202611/informacoes.php",
+      "source": "Comperve/UFRN",
+      "category": "Cursos Técnicos e Gratuitos",
+      "deadline": null,
+      "published": null,
+      "summary": "Último aviso: Divulgada consulta a validação das inscrições e a Demanda Parcial de Inscritos no processo seletivo.",
+      "evergreen": false,
+      "link_ok": true,
+      "id": "1d810ca5aba5"
+    },
+    {
+      "title": "Enem: inscrição, isenção da taxa e resultados",
+      "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
+      "source": "INEP (gov.br)",
+      "category": "Ensino Superior",
+      "deadline": null,
+      "published": null,
+      "summary": "A nota do Enem é a porta de entrada para Sisu, Prouni e Fies. Aluno de escola pública tem direito a pedir isenção da taxa.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "19ca5ef23e38"
+    },
+    {
+      "title": "Sisu: vagas em universidades públicas com a nota do Enem",
+      "url": "https://acessounico.mec.gov.br/sisu",
+      "source": "MEC (Acesso Único)",
+      "category": "Ensino Superior",
+      "deadline": null,
+      "published": null,
+      "summary": "Inscrições normalmente no início do ano. Inclui UFRN, IFRN e UFERSA.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "dc401844a729"
+    },
+    {
+      "title": "Prouni: bolsas de 50% e 100% em faculdades particulares",
+      "url": "https://acessounico.mec.gov.br/prouni",
+      "source": "MEC (Acesso Único)",
+      "category": "Ensino Superior",
+      "deadline": null,
+      "published": null,
+      "summary": "Para quem cursou o ensino médio em escola pública e tem renda familiar de até 3 salários mínimos por pessoa.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "7ef9eb115c71"
+    },
+    {
+      "title": "Fies: financiamento estudantil",
+      "url": "https://acessounico.mec.gov.br/fies",
+      "source": "MEC (Acesso Único)",
+      "category": "Ensino Superior",
+      "deadline": null,
+      "published": null,
+      "summary": "Financiamento de cursos em faculdades particulares, com condições especiais para baixa renda.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "368e9bee98e3"
+    },
+    {
+      "title": "CIEE: cadastro para estágio e Jovem Aprendiz",
+      "url": "https://portal.ciee.org.br/",
+      "source": "CIEE",
+      "category": "Jovem Aprendiz e Estágio",
+      "deadline": null,
+      "published": null,
+      "summary": "Faça o cadastro gratuito de estudante para receber vagas. O CIEE nunca cobra do candidato.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "52ab0be47005"
+    },
+    {
+      "title": "IEL: estágios e programas para jovens",
+      "url": "https://www.iel.org.br/",
+      "source": "IEL",
+      "category": "Jovem Aprendiz e Estágio",
+      "deadline": null,
+      "published": null,
+      "summary": "Instituto Euvaldo Lodi, ligado à indústria. Cadastro gratuito de estudantes.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "460a2d35c98e"
+    },
+    {
+      "title": "SENAI-RN: catálogo de cursos (inclui gratuitos)",
+      "url": "https://www.futuro.digital/senai-rn",
+      "source": "SENAI-RN",
+      "category": "Cursos Técnicos e Gratuitos",
+      "deadline": null,
+      "published": null,
+      "summary": "Cursos de qualificação e técnicos. Procure os marcados como gratuitos.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "01423f78807d"
+    },
+    {
+      "title": "SENAC-RN: cursos e Programa Senac de Gratuidade",
+      "url": "https://www.rn.senac.br/",
+      "source": "SENAC-RN",
+      "category": "Cursos Técnicos e Gratuitos",
+      "deadline": null,
+      "published": null,
+      "summary": "Cursos gratuitos para pessoas de baixa renda, com certificado.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "91e2644ab8f2"
+    },
+    {
+      "title": "Escola Virtual de Governo: cursos online gratuitos com certificado",
+      "url": "https://www.escolavirtual.gov.br/",
+      "source": "ENAP (gov.br)",
+      "category": "Cursos Técnicos e Gratuitos",
+      "deadline": null,
+      "published": null,
+      "summary": "Cursos curtos e gratuitos, bons para o currículo (informática, comunicação, cidadania).",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "33d1bb3d151f"
+    },
+    {
+      "title": "IFRN: todos os processos seletivos",
+      "url": "https://processoseletivo.ifrn.edu.br/",
+      "source": "IFRN",
+      "category": "Cursos Técnicos e Gratuitos",
+      "deadline": null,
+      "published": null,
+      "summary": "Cursos técnicos subsequentes (para quem terminou o ensino médio) e graduação gratuitos.",
+      "evergreen": true,
+      "link_ok": true,
+      "id": "da6d54147520"
+    }
+  ]
+}
