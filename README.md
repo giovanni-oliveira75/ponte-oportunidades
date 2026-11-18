@@ -25,10 +25,11 @@ Os alunos acessam pelo celular, via QR Code. Um robô (crawler) coleta as inform
 ```
 GitHub Actions (todo dia, 06h)
   -> crawler/sources/*   coleta na lista branca de fontes oficiais
-  -> crawler/classify.py filtra o que serve ao 3º ano e categoriza
+  -> entra em cada edital/matéria e extrai vagas, campus, prazo e o link direto de inscrição
+  -> crawler/classify.py filtra o que serve ao 3º ano, categoriza e marca o que é perto (Parnamirim/Natal)
   -> crawler/http.py     respeita robots.txt, espaça requisições e verifica links
   -> data/opportunities.json + data/history.csv (métricas)
-  -> docs/index.html     página publicada no GitHub Pages
+  -> docs/index.html     página publicada no GitHub Pages (template em crawler/template.html)
 ```
 
 **Fontes (lista branca):** IFRN (processos seletivos), Comperve/UFRN (cursos técnicos), SENAI-RN, FIERN

@@ -1,52 +1,80 @@
 # Links oficiais permanentes. Só domínios oficiais/institucionais.
-# Cada entrada é verificada automaticamente a cada execução (métrica de links válidos).
-- title: "Enem: inscrição, isenção da taxa e resultados"
+# url = página explicativa oficial; apply_url = onde o aluno se inscreve/cadastra de fato.
+# Todos são verificados automaticamente a cada execução (métrica de links válidos).
+- title: "Enem"
   url: https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem
+  apply_url: https://enem.inep.gov.br/participante/
+  apply_label: Página do participante
   source: INEP (gov.br)
   category: Ensino Superior
-  summary: "A nota do Enem é a porta de entrada para Sisu, Prouni e Fies. Aluno de escola pública tem direito a pedir isenção da taxa."
-- title: "Sisu: vagas em universidades públicas com a nota do Enem"
+  highlights: [Isenção para escola pública]
+  summary: "A nota do Enem abre as portas do Sisu, Prouni e Fies. Na Página do Participante você pede isenção da taxa, se inscreve e vê o resultado."
+- title: "Sisu: universidades públicas com a nota do Enem"
   url: https://acessounico.mec.gov.br/sisu
+  apply_url: https://acessounico.mec.gov.br/sisu
+  apply_label: Acessar o Sisu
   source: MEC (Acesso Único)
   category: Ensino Superior
-  summary: "Inscrições normalmente no início do ano. Inclui UFRN, IFRN e UFERSA."
+  highlights: [Gratuito, UFRN, IFRN, UFERSA]
+  summary: "Inscrições normalmente em janeiro, logo após o resultado do Enem. Você escolhe até 2 cursos."
 - title: "Prouni: bolsas de 50% e 100% em faculdades particulares"
   url: https://acessounico.mec.gov.br/prouni
+  apply_url: https://acessounico.mec.gov.br/prouni
+  apply_label: Acessar o Prouni
   source: MEC (Acesso Único)
   category: Ensino Superior
-  summary: "Para quem cursou o ensino médio em escola pública e tem renda familiar de até 3 salários mínimos por pessoa."
+  highlights: [Escola pública]
+  summary: "Para quem fez o ensino médio em escola pública. Bolsa integral com renda familiar de até 1,5 salário mínimo por pessoa, parcial até 3."
 - title: "Fies: financiamento estudantil"
   url: https://acessounico.mec.gov.br/fies
+  apply_url: https://acessounico.mec.gov.br/fies
+  apply_label: Acessar o Fies
   source: MEC (Acesso Único)
   category: Ensino Superior
-  summary: "Financiamento de cursos em faculdades particulares, com condições especiais para baixa renda."
+  summary: "Financia o curso em faculdade particular, com juros zero para as rendas mais baixas."
 - title: "CIEE: cadastro para estágio e Jovem Aprendiz"
   url: https://portal.ciee.org.br/
+  apply_url: https://ciee.app/cadastro
+  apply_label: Fazer cadastro
   source: CIEE
   category: Jovem Aprendiz e Estágio
-  summary: "Faça o cadastro gratuito de estudante para receber vagas. O CIEE nunca cobra do candidato."
-- title: "IEL: estágios e programas para jovens"
-  url: https://www.iel.org.br/
+  highlights: [Gratuito, A partir de 14 anos]
+  summary: "Com o cadastro você recebe vagas de estágio e aprendiz compatíveis com seu perfil. O CIEE nunca cobra do candidato."
+- title: "IEL: estágios para estudantes"
+  url: https://iel.portaldaindustria.com.br/para-voce
+  apply_url: https://iel.portaldaindustria.com.br/para-voce
+  apply_label: Ver programas
   source: IEL
   category: Jovem Aprendiz e Estágio
-  summary: "Instituto Euvaldo Lodi, ligado à indústria. Cadastro gratuito de estudantes."
-- title: "SENAI-RN: catálogo de cursos (inclui gratuitos)"
+  highlights: [Gratuito]
+  summary: "Instituto ligado à indústria que intermedia estágios. Cadastro gratuito."
+- title: "SENAI-RN: cursos de qualificação e técnicos"
   url: https://www.futuro.digital/senai-rn
+  apply_url: https://www.futuro.digital/senai-rn
+  apply_label: Ver cursos
   source: SENAI-RN
   category: Cursos Técnicos e Gratuitos
-  summary: "Cursos de qualificação e técnicos. Procure os marcados como gratuitos."
+  summary: "Catálogo de cursos do SENAI no RN. Filtre pelos marcados como gratuitos (Programa SENAI de Gratuidade)."
 - title: "SENAC-RN: cursos e Programa Senac de Gratuidade"
   url: https://www.rn.senac.br/
+  apply_url: https://www.rn.senac.br/
+  apply_label: Ver cursos
   source: SENAC-RN
   category: Cursos Técnicos e Gratuitos
-  summary: "Cursos gratuitos para pessoas de baixa renda, com certificado."
-- title: "Escola Virtual de Governo: cursos online gratuitos com certificado"
+  summary: "Vagas gratuitas para pessoas de baixa renda em cursos de tecnologia, saúde, gestão e outros."
+- title: "Escola Virtual de Governo: cursos online com certificado"
   url: https://www.escolavirtual.gov.br/
+  apply_url: https://www.escolavirtual.gov.br/catalogo
+  apply_label: Ver catálogo
   source: ENAP (gov.br)
   category: Cursos Técnicos e Gratuitos
-  summary: "Cursos curtos e gratuitos, bons para o currículo (informática, comunicação, cidadania)."
+  highlights: [Gratuito, Online, Certificado]
+  summary: "Cursos curtos que valorizam o primeiro currículo: informática, comunicação, Excel, cidadania."
 - title: "IFRN: todos os processos seletivos"
   url: https://processoseletivo.ifrn.edu.br/
+  apply_url: https://processoseletivo.ifrn.edu.br/
+  apply_label: Ver seleções
   source: IFRN
   category: Cursos Técnicos e Gratuitos
-  summary: "Cursos técnicos subsequentes (para quem terminou o ensino médio) e graduação gratuitos."
+  highlights: [Gratuito, Campus Parnamirim]
+  summary: "Cursos técnicos subsequentes (para quem já terminou o ensino médio) e graduações gratuitas, inclusive no campus Parnamirim."

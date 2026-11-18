@@ -25,7 +25,7 @@ _RULES = [
 # Itens que não servem para quem está terminando o ensino médio.
 _EXCLUDE = re.compile(
     r"pos-graduacao|pos graduacao|mestrado|doutorado|especializacao|lato sensu|stricto"
-    r"|professor|docente|servidor|eja\b|modalidade eja|concurso publico|licitacao|resultado final"
+    r"|forma integrada|integrados ao ensino medio|professor|docente|servidor|eja\b|modalidade eja|concurso publico|licitacao|resultado final"
     r"|gabarito|homologa|convocacao para a defesa|exclusivo para servidores"
     # público empresarial, não estudantil
     r"|empresari|industriais|aduaneir|licenciamento|exportac|importac|sindicato patronal"
@@ -88,10 +88,52 @@ def parse_br_date(text: str, today: Optional[date] = None) -> Optional[date]:
     return d
 
 
+_MONTHS = {m: i for i, m in enumerate(
+    ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto",
+     "setembro", "outubro", "novembro", "dezembro"], start=1)}
+_MONTH_RE = "|".join(_MONTHS)
+
+
 def extract_deadline(text: str, today: Optional[date] = None) -> Optional[date]:
-    """Procura um prazo do tipo 'até 30/11' ou '03/11/2026 até 21/12/2026'."""
+    """Procura um prazo: 'até 30/11', 'até o dia 19 de novembro', 'inscrições ... até 5 de dezembro de 2026'."""
+    today = today or date.today()
     norm = normalize(text)
-    m = re.search(r"ate\s+(?:o\s+dia\s+)?(\d{1,2}/\d{1,2}(?:/\d{2,4})?)", norm)
+    m = re.search(r"ate\s+(?:o\s+dia\s+|a\s+|as\s+\d+h\S*\s+do\s+dia\s+)?(\d{1,2}/\d{1,2}(?:/\d{2,4})?)", norm)
     if m:
         return parse_br_date(m.group(1), today)
+    m = re.search(rf"ate\s+(?:o\s+dia\s+)?(\d{{1,2}})(?:º|o)?\s+de\s+({_MONTH_RE})(?:\s+de\s+(\d{{4}}))?", norm)
+    if m:
+        day, month = int(m.group(1)), _MONTHS[m.group(2)]
+        year = int(m.group(3)) if m.group(3) else None
+        return parse_br_date(f"{day}/{month}" + (f"/{year}" if year else ""), today)
     return None
+
+
+# "Natal" também é o feriado: só conta como cidade em construções inequívocas.
+_NEAR = re.compile(
+    r"parnamirim|sao goncalo do amarante|macaiba|extremoz|grande natal"
+    r"|\bem natal\b|natal\s*[/-]\s*rn|natal \(rn\)|(?:norte|sul|leste|oeste) de natal|campus natal"
+)
+
+
+def is_near(text: str) -> bool:
+    return bool(_NEAR.search(normalize(text)))
+
+
+def highlights_from_text(text: str) -> list:
+    """Extrai fatos curtos e úteis para o aluno a partir do texto de uma matéria."""
+    norm = normalize(text)
+    out = []
+    m = re.search(r"(\d[\d.]*)\s+vagas", norm)
+    if m:
+        out.append(f"{m.group(1)} vagas")
+    if re.search(r"gratuit|sem custo|nao ha taxa|isento", norm):
+        out.append("Gratuito")
+    if re.search(r"\bonline\b|a distancia|\bead\b|remot", norm):
+        out.append("Online")
+    elif re.search(r"presencial", norm):
+        out.append("Presencial")
+    m = re.search(r"bolsa(?:-auxilio| auxilio)?\s+de\s+r\$\s?([\d.,]+)", norm)
+    if m:
+        out.append(f"Bolsa de R$ {m.group(1)}")
+    return out

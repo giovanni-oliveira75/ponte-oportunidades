@@ -20,6 +20,9 @@ def fetch() -> List[Opportunity]:
             source=entry["source"],
             category=entry["category"],
             summary=entry.get("summary", ""),
+            apply_url=entry.get("apply_url"),
+            apply_label=entry.get("apply_label", "Inscrever-se"),
+            highlights=entry.get("highlights", []),
             evergreen=True,
         )
         for entry in data

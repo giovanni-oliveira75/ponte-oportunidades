@@ -67,9 +67,14 @@ def curate(items: List[Opportunity], today: date) -> List[Opportunity]:
 
 
 def check_links(items: List[Opportunity]) -> None:
+    """Verifica a página de detalhes e o link de inscrição; inscrição quebrada é descartada."""
     with ThreadPoolExecutor(max_workers=8) as pool:
         for opp, ok in zip(items, pool.map(lambda o: http.check_link(o.url), items)):
             opp.link_ok = ok
+        with_apply = [o for o in items if o.apply_url]
+        for opp, ok in zip(with_apply, pool.map(lambda o: http.check_link(o.apply_url), with_apply)):
+            if not ok:
+                opp.apply_url = None
 
 
 def append_history(items: List[Opportunity], status: Dict[str, str], now: datetime) -> dict:

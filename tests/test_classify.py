@@ -1,8 +1,9 @@
 from datetime import date
 
 from crawler.classify import categorize, extract_deadline, is_relevant, parse_br_date
-from crawler.sources import ifrn
-from crawler.sources.wordpress import WordPressSource
+from crawler.models import Opportunity
+from crawler.sources import comperve, ifrn
+from crawler.sources.wordpress import WordPressSource, find_apply_link
 
 TODAY = date(2026, 11, 18)
 
@@ -42,7 +43,7 @@ def test_ifrn_parser_reads_open_editais():
     <div class="box12"><h2>Em andamento</h2><table><tbody>
       <tr><td><h3><a href='/edital/visualizar/1/'>Edital antigo</a></h3></td><td>-</td></tr>
     </tbody></table></div>"""
-    items = ifrn.parse(html)
+    items = ifrn.parse_list(html)
     assert len(items) == 1
     assert items[0].deadline == "2026-12-05"
     assert items[0].url == "https://processoseletivo.ifrn.edu.br/edital/visualizar/700/"
@@ -59,3 +60,31 @@ def test_wordpress_parser_filters_and_extracts_deadline():
     items = src.parse(posts, TODAY)
     assert [i.url for i in items] == ["https://exemplo.gov.br/a"]
     assert items[0].deadline == "2026-11-30"
+
+
+def test_ifrn_enrich_prefers_nearby_campus_and_counts_vagas():
+    html = """
+    <table><tbody>
+      <tr><td>Ceará-Mirim</td><td>Técnico em Informática</td><td>Noturno</td><td>40</td>
+          <td><a href='/inscricao/wizard/1/700/'>Realizar inscrição</a></td></tr>
+      <tr><td>Parnamirim</td><td>Técnico em Informática</td><td>Noturno</td><td>36</td>
+          <td><a href='/inscricao/wizard/2/700/'>Realizar inscrição</a></td></tr>
+    </tbody></table><p>Taxa de inscrição: Gratuita</p>"""
+    opp = ifrn.enrich(Opportunity(title="Edital", url="https://processoseletivo.ifrn.edu.br/edital/visualizar/700/",
+                                  source="IFRN"), html)
+    assert opp.apply_url.endswith("/inscricao/wizard/2/700/")
+    assert opp.near and "76 vagas" in opp.highlights and "Gratuito" in opp.highlights
+
+
+def test_find_apply_link_skips_social_and_internal_links():
+    content = """<p>Veja <a href="https://www.fiern.org.br/outra-noticia/">outra</a>,
+      siga no <a href="https://instagram.com/x">Instagram</a> e
+      <a href="https://www.sympla.com.br/evento/123">faça sua inscrição</a>.</p>"""
+    assert find_apply_link(content, "fiern.org.br") == "https://www.sympla.com.br/evento/123"
+
+
+def test_comperve_short_title():
+    official = ("PROCESSO SELETIVO 2026 PARA OS CURSOS TÉCNICOS DE NÍVEL MÉDIO NAS FORMAS SUBSEQUENTE "
+                "E CONCOMITANTE – INGRESSO NO ANO LETIVO DE 2027 - 11/2026")
+    assert comperve.short_title(official, "Escola Agrícola de Jundiaí (UFRN)") == \
+        "Cursos técnicos subsequentes 2027: Escola Agrícola de Jundiaí (UFRN)"
