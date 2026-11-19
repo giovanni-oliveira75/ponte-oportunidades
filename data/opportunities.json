@@ -1,8 +1,8 @@
 {
-  "atualizado_em": "2026-11-18T14:47-03:00",
+  "atualizado_em": "2026-11-19T14:58-03:00",
   "fontes": {
     "IFRN": "ok (0)",
-    "Comperve/UFRN": "ok (2)",
+    "Comperve/UFRN": "ok (1)",
     "SENAI-RN": "ok (0)",
     "FIERN (SESI/SENAI/IEL)": "ok (1)",
     "Governo do RN": "falhou: ConnectionError",
@@ -10,25 +10,6 @@
     "Links oficiais": "ok (10)"
   },
   "oportunidades": [
-    {
-      "title": "Cursos técnicos subsequentes 2027: Escola Agrícola de Jundiaí (UFRN)",
-      "url": "https://www.comperve.ufrn.br/conteudo/cursostecnicos/escolaagricola/eaj_202611/informacoes.php",
-      "source": "Comperve/UFRN",
-      "category": "Cursos Técnicos e Gratuitos",
-      "deadline": null,
-      "published": "2026-11-18",
-      "summary": "Último aviso: Divulgada Lista de inscrições validadas e retificada Demanda Parcial de inscrições.",
-      "apply_url": "https://www.comperve.ufrn.br/conteudo/cursostecnicos/escolaagricola/eaj_202611/inscricoes.php",
-      "apply_label": "Inscrições",
-      "highlights": [
-        "Macaíba",
-        "Edital disponível"
-      ],
-      "near": true,
-      "evergreen": false,
-      "link_ok": true,
-      "id": "1d810ca5aba5"
-    },
     {
       "title": "IEL-RN promove palestra gratuita sobre planejamento e desenvolvimento de carreira para estagiários",
       "url": "https://www2.fiern.org.br/iel-rn-promove-palestra-gratuita-sobre-planejamento-e-desenvolvimento-de-carreira-para-estagiarios/",
